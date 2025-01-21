@@ -96,4 +96,57 @@ public class Userdaoimpl {
         return null;
     }
 
+    public boolean saveCustomers(User user, DataSource dataSource) {
+        try {
+            Connection connection=dataSource.getConnection();
+            PreparedStatement pstm=connection.prepareStatement("insert into users(name,email,password,role) values(?,?,?,?)");
+            pstm.setString(1,user.getName());
+            pstm.setString(2,user.getEmail());
+            pstm.setString(3,user.getPassword());
+            pstm.setString(4,user.getRole());
+            int ft=pstm.executeUpdate();
+            if(ft>0){
+                return true;
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return false;
+    }
+
+    public boolean updateCustomer(User user, DataSource dataSource) {
+
+        try {
+            Connection connection=dataSource.getConnection();
+            PreparedStatement pstm=connection.prepareStatement("update users set name=?,email=?,password=?,role=? where id=?");
+            pstm.setString(1,user.getName());
+            pstm.setString(2,user.getEmail());
+            pstm.setString(3,user.getPassword());
+            pstm.setString(4,user.getRole());
+            pstm.setInt(5,user.getId());
+            int ft=pstm.executeUpdate();
+            if(ft>0){
+                return true;
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+       return false;
+    }
+
+    public boolean deleteCustomer(int id, DataSource dataSource) {
+        try {
+            Connection connection=dataSource.getConnection();
+            PreparedStatement pstm=connection.prepareStatement("delete from users where id=?");
+            pstm.setInt(1,id);
+            int ft=pstm.executeUpdate();
+            if(ft>0){
+                return true;
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return false;
+    }
 }

@@ -26,7 +26,9 @@
 
 
 <div  class="container">
+
    <div class="card-header my-3">All products</div>
+   <div class="card-header my-3">main dish</div>
    <div class="row">
 
       <%

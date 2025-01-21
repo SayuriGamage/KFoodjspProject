@@ -49,8 +49,8 @@
                         <input type="email" class="form-control" id="customerEmail" name="customerEmail" placeholder="Enter email" required>
                     </div>
                     <div class="col-md-4">
-                        <label for="customerPhone" class="form-label">Phone</label>
-                        <input type="text" class="form-control" id="customerPhone" name="customerPhone" placeholder="Enter phone number" required>
+                        <label for="customerPhone" class="form-label">Password</label>
+                        <input type="text" class="form-control" id="customerPhone" name="customerPassword" placeholder="Enter your password" required>
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary mt-3">Add Customer</button>
@@ -117,15 +117,15 @@
                         <input type="hidden" id="editCustomerId" name="customerId">
                         <div class="mb-3">
                             <label for="editCustomerName" class="form-label">Name</label>
-                            <input type="text" class="form-control" id="editCustomerName" name="customerName" required>
+                            <input type="text" class="form-control" id="editCustomerName" name="ucustomerName" required>
                         </div>
                         <div class="mb-3">
                             <label for="editCustomerEmail" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="editCustomerEmail" name="customerEmail" required>
+                            <input type="email" class="form-control" id="editCustomerEmail" name="ucustomerEmail" required>
                         </div>
                         <div class="mb-3">
                             <label for="editCustomerPassword" class="form-label">Phone</label>
-                            <input type="text" class="form-control" id="editCustomerPassword" name="customerPassword" required>
+                            <input type="text" class="form-control" id="editCustomerPassword" name="editCustomerPassword" required>
                         </div>
                         <button type="submit" class="btn btn-primary">Update</button>
                     </form>
@@ -166,7 +166,7 @@
     const editCustomerIdInput = document.getElementById('editCustomerId');
     const editCustomerNameInput = document.getElementById('editCustomerName');
     const editCustomerEmailInput = document.getElementById('editCustomerEmail');
-    const editCustomerPhoneInput = document.getElementById('editCustomerPhone');
+    const editCustomerPhoneInput = document.getElementById('editCustomerPassword');
 
     function openEditModal(customerId, customerName, customerEmail, customerPhone) {
         editCustomerIdInput.value = customerId;
