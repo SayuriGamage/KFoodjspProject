@@ -68,7 +68,6 @@
                     <th>ID</th>
                     <th>Name</th>
                     <th>Email</th>
-                    <th>Password</th>
                     <th>Actions</th>
                 </tr>
                 </thead>
@@ -81,7 +80,6 @@
                     <td><%= user.getId() %></td>
                     <td><%= user.getName() %></td>
                     <td><%= user.getEmail() %></td>
-                    <td><%= user.getPassword() %></td>
                     <td>
                         <a href="#"
                            class="btn btn-sm btn-warning"

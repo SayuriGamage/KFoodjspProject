@@ -30,7 +30,7 @@ public class AddProductServlet extends HttpServlet {
         Product product=new Product(name,category,price,image);
         boolean save=productdaoimpl.saveProduct(product,dataSource);
         if(save == true){
-            resp.sendRedirect("admin/home.jsp");
+            resp.sendRedirect("admin/product.jsp");
         }else {
             resp.sendRedirect("admin/product.jsp");
         }

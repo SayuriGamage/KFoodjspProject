@@ -42,8 +42,10 @@ public class Productdaoimpl {
             pstm.setString(3,product.getPrice());
             pstm.setString(4,product.getImage());
             int ft=pstm.executeUpdate();
+            connection.close();
             if (ft>0) {
                 return true;
+
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
