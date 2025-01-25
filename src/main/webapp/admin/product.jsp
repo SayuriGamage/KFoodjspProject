@@ -50,7 +50,7 @@
     <div class="card mb-4">
         <div class="card-header">Add New Product</div>
         <div class="card-body">
-            <form action="../product" method="post" >
+            <form action="../product" method="post"  enctype="multipart/form-data">
                 <div class="row">
                     <div class="col-md-3">
                         <label for="name" class="form-label">Product Name</label>
@@ -106,7 +106,7 @@
                         for(Product product : products) {%>
                 <tr>
                     <td><%= product.getId() %></td>
-                    <td><img src="../product-images/<%= product.getImage() %>" alt="Product Image"></td>
+                    <td><img src="../product-images/<%=product.getImage()%>" alt="Product Image"></td>
                     <td><%= product.getName() %></td>
                     <td><%= product.getCategory() %></td>
                     <td>$<%= product.getPrice() %></td>

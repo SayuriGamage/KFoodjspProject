@@ -10,9 +10,7 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="home.jsp">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../cart.jsp">Cart</a>
-                </li>
+
                 <li class="nav-item">
                     <a class="nav-link" href="../orders.jsp">Orders</a>
                 </li>

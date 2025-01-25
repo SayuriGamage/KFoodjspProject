@@ -149,4 +149,22 @@ public class Userdaoimpl {
         }
         return false;
     }
+
+    public boolean validUserCheck(String email, DataSource dataSource) {
+        try {
+            Connection connection = dataSource.getConnection();
+            PreparedStatement pstm = connection.prepareStatement("select * from users where email=?");
+            pstm.setString(1, email);
+
+            ResultSet rs = pstm.executeQuery();
+
+            if (rs.next()) {
+                return true;
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return false;
+    }
+
 }

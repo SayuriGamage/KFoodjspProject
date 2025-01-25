@@ -90,4 +90,27 @@ public class Productdaoimpl {
         }
         return false;
     }
+
+
+    public Product getProductdetails(int id, DataSource dataSource) {
+        try {
+            Connection connection=dataSource.getConnection();
+            String sql="select * from product where id = ?";
+            PreparedStatement pstm=connection.prepareStatement(sql);
+            pstm.setInt(1,id);
+            ResultSet rs=pstm.executeQuery();
+                while (rs.next()) {
+                    Product product = new Product();
+                    product.setId(rs.getInt("id"));
+                    product.setName(rs.getString("name"));
+                    product.setCategory(rs.getString("category"));
+                    product.setPrice(rs.getString("price"));
+                    product.setImage(rs.getString("image"));
+                    return product;
+                }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return null;
+    }
 }

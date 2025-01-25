@@ -8,15 +8,10 @@ import lombok.Setter;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Getter
 @Setter
-public class Cart{
- private int pro_id;
- private  String u_email;
- private String pro_name;
- private  String pro_category;
- private String pro_price;
- private String image;
-
-
+@Getter
+public class Order_details {
+    private int orderDetail_id;
+    private int order_id;
+    private  int product_id;
 }

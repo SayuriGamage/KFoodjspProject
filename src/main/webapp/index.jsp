@@ -92,8 +92,10 @@
                <p class="card-text">Category: <%= product.getCategory() %></p>
             </div>
             <div class="card-footer d-flex justify-content-between">
-               <a href="cart.jsp"><img src="icons/cart1.png" width="25px" height="25px"></a>
-               <a href="orders.jsp"><img src="icons/but1.png" width="25px" height="25px"></a>
+               <a href="#"
+                  class=" btn btn-primary btn-sm ml-2"> Add To Cart</a>
+
+               <a href=""><img src="icons/but1.png" width="25px" height="25px"></a>
             </div>
          </div>
       </div>
@@ -110,6 +112,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
 
 </body>
