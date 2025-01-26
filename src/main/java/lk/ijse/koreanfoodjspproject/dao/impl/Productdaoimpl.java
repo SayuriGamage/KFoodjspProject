@@ -113,4 +113,49 @@ public class Productdaoimpl {
         }
         return null;
     }
+
+    public List<Product> getProductsByCategory(Connection connection, String selectedCategory) {
+        List<Product> products=new ArrayList<>();
+        try {
+            PreparedStatement pstm=connection.prepareStatement("select * from product where category=?");
+            pstm.setString(1,selectedCategory);
+            ResultSet rs=pstm.executeQuery();
+            while (rs.next()) {
+                Product product = new Product();
+                product.setId(rs.getInt("id"));
+                product.setName(rs.getString("name"));
+                product.setCategory(rs.getString("category"));
+                product.setPrice(rs.getString("price"));
+                product.setImage(rs.getString("image"));
+                products.add(product);
+            }
+            return products;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
+    public List<Product> searchProductsByName(Connection connection, String searchQuery) {
+       String sql="select * from product where name like ?";
+       List<Product> products=new ArrayList<>();
+        try {
+            PreparedStatement pstm=connection.prepareStatement(sql);
+
+            pstm.setString(1,"%"+searchQuery+"%");
+            ResultSet rs=pstm.executeQuery();
+            while (rs.next()) {
+                Product product = new Product();
+                product.setId(rs.getInt("id"));
+                product.setName(rs.getString("name"));
+                product.setCategory(rs.getString("category"));
+                product.setPrice(rs.getString("price"));
+                product.setImage(rs.getString("image"));
+                products.add(product);
+            }
+            return products;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

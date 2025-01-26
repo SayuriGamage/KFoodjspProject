@@ -134,7 +134,7 @@
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="expiryDate" class="form-label">Expiration Date</label>
-                                <input type="text" id="expiryDate" name="expiryDate" class="form-control" placeholder="Select expiration date" required>
+                                <input type="date" id="expiryDate" name="expiryDate" class="form-control" placeholder="Select expiration date" required>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="cvv" class="form-label">Card No</label>

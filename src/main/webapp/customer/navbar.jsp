@@ -18,10 +18,27 @@
                     <a class="nav-link" href="../login.jsp">Login</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="log-out">Logout</a>
+                    <a class="nav-link" href="../log-out">Logout</a>
                 </li>
             </ul>
 
         </div>
     </div>
 </nav>
+<style>
+    .navbar {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .navbar-brand {
+        font-size: 1.5rem;
+        letter-spacing: 0.05em;
+    }
+    .nav-link {
+        font-size: 1rem;
+        transition: color 0.3s;
+    }
+    .nav-link:hover {
+        color: #f8c94d !important;
+    }
+
+</style>

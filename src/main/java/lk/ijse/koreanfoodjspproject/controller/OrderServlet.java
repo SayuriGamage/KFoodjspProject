@@ -64,11 +64,11 @@ public class OrderServlet extends HttpServlet {
 
 
                 cartdaoimpl.clearCart(connection, email);
-                System.out.println("order is sucsuss");
-              //  resp.sendRedirect("orderSuccess.jsp");
+
+                resp.sendRedirect("customer/home.jsp");
             } else {
                 System.out.println("Order not added");
-                resp.sendRedirect("orderFailure.jsp");
+                resp.sendRedirect("orders.jsp");
             }
 
         } catch (SQLException e) {
