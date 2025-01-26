@@ -42,7 +42,6 @@ public class Productdaoimpl {
             pstm.setString(3,product.getPrice());
             pstm.setString(4,product.getImage());
             int ft=pstm.executeUpdate();
-            connection.close();
             if (ft>0) {
                 return true;
 
@@ -82,8 +81,11 @@ public class Productdaoimpl {
             PreparedStatement pstm=connection.prepareStatement(sql);
             pstm.setInt(1,id);
             int ft=pstm.executeUpdate();
+
             if (ft>0) {
+                connection.close();
                 return true;
+
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);

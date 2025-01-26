@@ -168,9 +168,10 @@
         var qty = parseInt(qtyInput.value);
         qtyInput.value = qty + 1;
         updateTotalPrice(button);
+        updateFinalTotalPrice();
     }
 
-    // Function to decrement quantity
+
     function decrementQty(button) {
         var qtyInput = button.closest('div').querySelector('.qty-input');
         var qty = parseInt(qtyInput.value);
@@ -178,10 +179,11 @@
             qtyInput.value = qty - 1;
         }
         updateTotalPrice(button);
+        updateFinalTotalPrice();
     }
 
 
-    // Function to update the total price based on quantity
+
     function updateTotalPrice(button) {
         var row = button.closest('tr');
         var price = parseFloat(row.cells[3].innerText.replace('$', ''));
@@ -199,11 +201,11 @@
             finalTotal += parseFloat(totalPriceCell);
         });
 
-        // Set the final total in the Total Payment field
+
         document.getElementById('totalPayment').value = '$' + finalTotal.toFixed(2);
     }
 
-    // Call updateFinalTotalPrice on page load to calculate the initial total
+
     window.onload = updateFinalTotalPrice;
 
 

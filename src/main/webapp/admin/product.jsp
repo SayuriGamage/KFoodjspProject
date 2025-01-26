@@ -46,15 +46,14 @@
 <div class="container">
     <h2 class="text-center mb-4">Manage Products</h2>
 
-    <!-- Add Product Form -->
     <div class="card mb-4">
         <div class="card-header">Add New Product</div>
         <div class="card-body">
-            <form action="../product" method="post"  enctype="multipart/form-data">
+            <form action="../product" method="post">
                 <div class="row">
                     <div class="col-md-3">
                         <label for="name" class="form-label">Product Name</label>
-                        <input type="text" class="form-control" id="name" name="name" required>
+                        <input type="text" class="form-control" id="name" name="pname" required>
                     </div>
                     <div class="col-md-3">
                         <label for="category" class="form-label">Category</label>
@@ -85,7 +84,7 @@
         </div>
     </div>
 
-    <!-- Products Table -->
+
     <div class="card">
         <div class="card-header">Products List</div>
         <div class="card-body">
@@ -131,8 +130,7 @@
                 </tbody>
             </table>
         </div>
-        <%-- model--%>
-        <!-- Modal Template -->
+
         <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -172,9 +170,7 @@
             </div>
         </div>
 
-    <%--model end--%>
 
-        <!-- Delete Modal -->
         <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -196,14 +192,14 @@
             </div>
         </div>
 
-    <%--delete model end--%>
+
     </div>
 </div>
 
-<!-- Include Bootstrap Bundle with Popper -->
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-    // Get references to modal and form elements
+
     const editModal = new bootstrap.Modal(document.getElementById('editModal'));
     const productIdInput = document.getElementById('productId');
     const productNameInput = document.getElementById('productName');
@@ -211,27 +207,27 @@
     const productPriceInput = document.getElementById('productPrice');
     const editProductForm = document.getElementById('editProductForm');
 
-    // Function to handle Edit button click
+
     function openEditModal(productId, productName, productCategory, productPrice) {
-        // Populate modal fields with product details
+
         productIdInput.value = productId;
         productNameInput.value = productName;
         productCategoryInput.value = productCategory;
         productPriceInput.value = productPrice;
 
-        // Show the modal
+
         editModal.show();
     }
 </script>
 <script>
-    // Reference the Delete Modal
+
     const deleteModal = new bootstrap.Modal(document.getElementById('deleteModal'));
     const deleteProductIdInput = document.getElementById('deleteProductId');
 
-    // Function to open the Delete Modal
+
     function openDeleteModal(productId) {
-        deleteProductIdInput.value = productId; // Set product ID in hidden input
-        deleteModal.show(); // Show the modal
+        deleteProductIdInput.value = productId;
+        deleteModal.show();
     }
 </script>
 

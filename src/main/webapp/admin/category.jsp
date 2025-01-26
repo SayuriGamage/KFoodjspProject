@@ -136,10 +136,10 @@
 
 </div>
 
-<!-- Include Bootstrap Bundle with Popper -->
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-    // Open Edit Modal
+
     const editModal = new bootstrap.Modal(document.getElementById('editModal'));
     const editCategoryIdInput = document.getElementById('editCategoryId');
     const editCategoryNameInput = document.getElementById('editCategoryName');
@@ -150,7 +150,7 @@
         editModal.show();
     }
 
-    // Open Delete Modal
+
     const deleteModal = new bootstrap.Modal(document.getElementById('deleteModal'));
     const deleteCategoryIdInput = document.getElementById('deleteCategoryId');
 

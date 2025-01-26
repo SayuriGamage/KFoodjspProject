@@ -37,7 +37,7 @@
 
       /* Hero Section Styling */
       .hero-section {
-         background: url('product-images/homecedio.gif') no-repeat center center/cover;
+         background: url('product-images/fullhd.gif') no-repeat center center/cover;
          height: 60vh;
          display: flex;
          align-items: center;

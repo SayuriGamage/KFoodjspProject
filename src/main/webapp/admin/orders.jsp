@@ -23,7 +23,11 @@
     e.printStackTrace();
   } finally {
     if (connection != null) {
-      connection.close();
+      try {
+        connection.close();
+      } catch (Exception e) {
+        e.printStackTrace();
+      }
     }
   }
 %>
@@ -33,7 +37,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Order History</title>
-  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
@@ -58,14 +61,14 @@
       <div class="card">
         <div class="card-body">
           <h3 class="text-center mb-4">Order History</h3>
-          <!-- Search Bar -->
+
           <form class="search-bar" method="get">
             <div class="input-group">
               <input type="date" class="form-control" name="date" value="<%= request.getParameter("date") %>" placeholder="Search by Date" aria-label="Search by Date">
               <button class="btn btn-primary" type="submit">Search</button>
             </div>
           </form>
-          <!-- Orders Table -->
+
           <div class="order-table">
             <table class="table table-striped table-hover">
               <thead class="table-dark">
@@ -106,7 +109,8 @@
   </div>
 </div>
 
-<!-- Bootstrap JS -->
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

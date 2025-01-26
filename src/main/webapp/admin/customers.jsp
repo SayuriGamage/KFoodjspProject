@@ -102,7 +102,7 @@
         </div>
     </div>
 
-    <!-- Edit Modal -->
+
     <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -156,10 +156,10 @@
 
 </div>
 
-<!-- Include Bootstrap Bundle with Popper -->
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-    // Open Edit Modal
+
     const editModal = new bootstrap.Modal(document.getElementById('editModal'));
     const editCustomerIdInput = document.getElementById('editCustomerId');
     const editCustomerNameInput = document.getElementById('editCustomerName');
@@ -174,7 +174,6 @@
         editModal.show();
     }
 
-    // Open Delete Modal
     const deleteModal = new bootstrap.Modal(document.getElementById('deleteModal'));
     const deleteCustomerIdInput = document.getElementById('deleteCustomerId');
 

@@ -22,10 +22,12 @@ public class AddProductServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String name = req.getParameter("name");
+        String name = req.getParameter("pname");
         String category = req.getParameter("category");
         String price = req.getParameter("price");
         String image=req.getParameter("images");
+
+        System.out.println(name+" "+category+" "+price+" "+image);
 
         Product product=new Product(name,category,price,image);
         boolean save=productdaoimpl.saveProduct(product,dataSource);

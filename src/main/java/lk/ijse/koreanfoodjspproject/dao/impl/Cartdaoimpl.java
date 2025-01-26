@@ -25,7 +25,9 @@ public class Cartdaoimpl {
             preparedStatement.setString(5, c.getPro_price());
             preparedStatement.setString(6, c.getImage());
             preparedStatement.executeUpdate();
+            connection.close();
             return true;
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
